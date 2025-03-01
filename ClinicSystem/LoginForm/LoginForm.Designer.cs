@@ -88,6 +88,7 @@ namespace ClinicSystem
             this.checkPassword.Name = "checkPassword";
             this.checkPassword.Size = new System.Drawing.Size(15, 14);
             this.checkPassword.TabIndex = 19;
+            this.checkPassword.TabStop = false;
             this.checkPassword.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -278,7 +279,7 @@ namespace ClinicSystem
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = global::ClinicSystem.Properties.Resources.Logo;
-            this.pictureBox3.Location = new System.Drawing.Point(62, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(69, 11);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(228, 212);
             this.pictureBox3.TabIndex = 11;
