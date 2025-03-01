@@ -117,31 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        5gAAAOYBIly6UQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF9SURBVFhH7ZZN
-        SgNBEIUHF6LeQS+gh9FjKKgnMEt/NiKKO0/g3uhC7yAmuYE/e3Wp6HthCpriDTXYFd34wQc9nXo93ZNJ
-        p5sfsAZP4Bi+t7LNPn42M+bhOfyEXx1+wDPI2lQ44B0sb/YMr+AQvrR95i1MnQRXboM/wXU4Bw22NyAn
-        ZXWnMAV+r3y0dvNl2MUKtEkwswqr4ctlq+LKI/gkrP6YHbVMIAfj6svH3gVr7J0YsaOWN8jB+LL15QYy
-        8zq9qoQD0cvpVT9Ya7lq/ifw6xPgDnYEy02lVv6CDmGv3ZGFapAMD2BI5sq9HDtEBTMNUaFMQ1RI+QB3
-        WrnlqhpliAp5efMFaLDddxIhKuTdhp5dqGq9ISrk3YSeLahqvSEq5L2Hi9BYgvxaVK03RIWUF9BgW9Uo
-        Q1RIWf43lHt/ZIgKKf98AtfQYFvVKENUSMlT7x4ctG1VowxRoUxDVCjTEB4eVDDDRxgyywPJPgzhsYmT
-        yHwSHIunIXcka5pvcKECa55NUHwAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        5gAAAOYBIly6UQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF9SURBVFhH7ZZN
-        SgNBEIUHF6LeQS+gh9FjKKgnMEt/NiKKO0/g3uhC7yAmuYE/e3Wp6HthCpriDTXYFd34wQc9nXo93ZNJ
-        p5sfsAZP4Bi+t7LNPn42M+bhOfyEXx1+wDPI2lQ44B0sb/YMr+AQvrR95i1MnQRXboM/wXU4Bw22NyAn
-        ZXWnMAV+r3y0dvNl2MUKtEkwswqr4ctlq+LKI/gkrP6YHbVMIAfj6svH3gVr7J0YsaOWN8jB+LL15QYy
-        8zq9qoQD0cvpVT9Ya7lq/ifw6xPgDnYEy02lVv6CDmGv3ZGFapAMD2BI5sq9HDtEBTMNUaFMQ1RI+QB3
-        WrnlqhpliAp5efMFaLDddxIhKuTdhp5dqGq9ISrk3YSeLahqvSEq5L2Hi9BYgvxaVK03RIWUF9BgW9Uo
-        Q1RIWf43lHt/ZIgKKf98AtfQYFvVKENUSMlT7x4ctG1VowxRoUxDVCjTEB4eVDDDRxgyywPJPgzhsYmT
-        yHwSHIunIXcka5pvcKECa55NUHwAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>

@@ -65,6 +65,11 @@ namespace ClinicSystem
             DoctorLoginForm doctorLoginForm = new DoctorLoginForm();
             doctorLoginForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 
 }

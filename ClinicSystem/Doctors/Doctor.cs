@@ -17,11 +17,11 @@ namespace ClinicSystem
         private int doctorAge;
         private string doctorAddress;
         private string doctorGender;
-        private long doctorContactNumber;
+        private string doctorContactNumber;
         private DateTime doctorDateHired;
         private string doctorPIN;
         private List<string> operationName;
-        public Doctor(int doctorId, int operationCode, string doctorFName, string doctorMName, string doctorLName, int doctorAge, string doctorAddress, string doctorGender, long doctorContactNumber, DateTime doctorDateHired, string doctorPIN)
+        public Doctor(int doctorId, int operationCode, string doctorFName, string doctorMName, string doctorLName, int doctorAge, string doctorAddress, string doctorGender, string doctorContactNumber, DateTime doctorDateHired, string doctorPIN)
         {
             this.doctorId = doctorId;
             this.operationCode = operationCode;
@@ -37,7 +37,7 @@ namespace ClinicSystem
         }
 
         public Doctor(int doctorId, string doctorFName, string doctorMName, string doctorLName, int doctorAge, string doctorAddress,
-            string doctorGender, long doctorContactNumber, DateTime doctorDateHired, List<string> operationName)
+            string doctorGender, string doctorContactNumber, DateTime doctorDateHired, List<string> operationName)
         {
             this.operationName = operationName;
             this.doctorId = doctorId;
@@ -51,6 +51,10 @@ namespace ClinicSystem
             this.doctorDateHired = doctorDateHired.Date;
         }
 
+        public List<String> getOperationNames()
+        {
+            return operationName;
+        }
         public int getDoctorID()
         {
             return doctorId;
@@ -83,7 +87,7 @@ namespace ClinicSystem
         {
             return doctorGender;
         }
-        public long getDoctorContactNumber()
+        public string getDoctorContactNumber()
         {
             return doctorContactNumber;
         }

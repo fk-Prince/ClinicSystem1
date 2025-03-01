@@ -34,7 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FlowPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.checkBoxAdmitted = new System.Windows.Forms.CheckBox();
+            this.radioDischarge = new System.Windows.Forms.RadioButton();
+            this.radioAdmitted = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -94,18 +95,29 @@
             this.FlowPanel.Size = new System.Drawing.Size(877, 532);
             this.FlowPanel.TabIndex = 1;
             // 
-            // checkBoxAdmitted
+            // radioDischarge
             // 
-            this.checkBoxAdmitted.AutoSize = true;
-            this.checkBoxAdmitted.Checked = true;
-            this.checkBoxAdmitted.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxAdmitted.Location = new System.Drawing.Point(86, 84);
-            this.checkBoxAdmitted.Name = "checkBoxAdmitted";
-            this.checkBoxAdmitted.Size = new System.Drawing.Size(111, 17);
-            this.checkBoxAdmitted.TabIndex = 2;
-            this.checkBoxAdmitted.Text = "Currently Admitted";
-            this.checkBoxAdmitted.UseVisualStyleBackColor = true;
-            this.checkBoxAdmitted.CheckedChanged += new System.EventHandler(this.checkBoxAdmitted_CheckedChanged);
+            this.radioDischarge.AutoSize = true;
+            this.radioDischarge.Location = new System.Drawing.Point(180, 84);
+            this.radioDischarge.Name = "radioDischarge";
+            this.radioDischarge.Size = new System.Drawing.Size(73, 17);
+            this.radioDischarge.TabIndex = 3;
+            this.radioDischarge.Text = "Discharge";
+            this.radioDischarge.UseVisualStyleBackColor = true;
+            this.radioDischarge.CheckedChanged += new System.EventHandler(this.radioDischarge_CheckedChanged);
+            // 
+            // radioAdmitted
+            // 
+            this.radioAdmitted.AutoSize = true;
+            this.radioAdmitted.Checked = true;
+            this.radioAdmitted.Location = new System.Drawing.Point(86, 84);
+            this.radioAdmitted.Name = "radioAdmitted";
+            this.radioAdmitted.Size = new System.Drawing.Size(66, 17);
+            this.radioAdmitted.TabIndex = 4;
+            this.radioAdmitted.TabStop = true;
+            this.radioAdmitted.Text = "Admitted";
+            this.radioAdmitted.UseVisualStyleBackColor = true;
+            this.radioAdmitted.CheckedChanged += new System.EventHandler(this.radioAdmitted_CheckedChanged);
             // 
             // ViewPatientsForm
             // 
@@ -113,7 +125,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1041, 651);
-            this.Controls.Add(this.checkBoxAdmitted);
+            this.Controls.Add(this.radioAdmitted);
+            this.Controls.Add(this.radioDischarge);
             this.Controls.Add(this.FlowPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -135,6 +148,7 @@
         private System.Windows.Forms.TextBox searchPatientName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel FlowPanel;
-        private System.Windows.Forms.CheckBox checkBoxAdmitted;
+        private System.Windows.Forms.RadioButton radioDischarge;
+        private System.Windows.Forms.RadioButton radioAdmitted;
     }
 }

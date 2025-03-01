@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -142,7 +143,7 @@ namespace ClinicSystem
                                 int.Parse(reader["Age"].ToString()),
                                 reader["Address"].ToString(),
                                 reader["Gender"].ToString(),
-                                long.Parse(reader["ContactNumber"].ToString()),
+                                reader["ContactNumber"].ToString(),
                                 DateTime.Parse(reader["Date-Hired"].ToString()),
                                 reader["PIN"].ToString()
                             );
@@ -341,13 +342,13 @@ namespace ClinicSystem
             {
                 MessageBox.Show("Enter age");
                 return null;
-            }
-
-            if (age < 0)
+            } 
+            if (age > 100 || age < 0)
             {
                 MessageBox.Show("Invalid Age");
                 return null;
             }
+
             DateTime birthDate;
             if (!DateTime.TryParse(Birthdate.Text.Trim(), out birthDate))
             {
@@ -355,12 +356,20 @@ namespace ClinicSystem
                 return null;
             }
             birthDate = birthDate.Date;
-            long contactNumber = 0;
-            if (!string.IsNullOrWhiteSpace(ContactNumber.Text) && !long.TryParse(ContactNumber.Text.Trim(), out contactNumber))
+          
+            string contactNumber = ContactNumber.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(ContactNumber.Text) && !long.TryParse(ContactNumber.Text.Trim(),out long contactNumber1))
             {
                 MessageBox.Show("Enter Valid Contact Number.");
                 return null;
             }
+
+            if (!Regex.IsMatch(contactNumber, @"^09\d{9}$"))
+            {
+                MessageBox.Show("Invalid Number");
+                return null;
+            }
+
 
             DateTime dateAdmitted;
             if (!DateTime.TryParse(DateAdmitted.Text.Trim(), out dateAdmitted))

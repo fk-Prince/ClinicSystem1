@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClinicSystem.Main;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace ClinicSystem
 {
@@ -73,6 +74,7 @@ namespace ClinicSystem
                 command.Parameters.AddWithValue("@PatientId", patientId);
                 command.Parameters.AddWithValue("@DateDischarged", DateTime.Now.ToString("yyyy-MM-dd"));
                 command.ExecuteNonQuery();
+                conn.Close();
             }
             catch( MySqlException ex)
             {
@@ -111,7 +113,7 @@ namespace ClinicSystem
                     string address = reader["Address"].ToString();
                     string gender = reader["Gender"].ToString();
                     DateTime bday = Convert.ToDateTime(reader["BirthDate"]);
-                    long contact = long.Parse(reader["ContactNumber"].ToString());
+                    string contact = reader["ContactNumber"].ToString();
                     string status = reader["Status"].ToString();
                     string condition = reader["PatientCondition"].ToString();
                     DateTime dateAdmitted = getDateAdmitted(patientId);
@@ -170,6 +172,7 @@ namespace ClinicSystem
             {
                 return Convert.ToDateTime(reader["DateAdmitted"]);
             }
+            conn.Close();
             return DateTime.MinValue;
         }
         private DateTime getDateDischarged(int patientId)
@@ -189,6 +192,7 @@ namespace ClinicSystem
                 return reader["DateDischarged"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["DateDischarged"]);
 
             }
+            conn.Close();
             return DateTime.MinValue;
         }
 
@@ -196,7 +200,7 @@ namespace ClinicSystem
         private void displayPatient(List<Patient> patientList)
         {
             FlowPanel.Controls.Clear();
-            string check = checkBoxAdmitted.Checked ? "Admitted" : "Discharged";
+            string check = radioAdmitted.Checked ? "Admitted" : "Discharged";
             foreach (Patient patient in patientList)
             {
                 if (patient.getStatus().Equals(check, StringComparison.OrdinalIgnoreCase))
@@ -222,7 +226,7 @@ namespace ClinicSystem
                     Label bday = createLabel("Birth-Date", patient.getBirthDate().ToString("yyyy-MM-dd"), 10, 130);
                     panel.Controls.Add(bday);
 
-                    Label number = createLabel("Contact Number", patient.getContactNumber().ToString(), 10, 160);
+                    Label number = createLabel("Contact Number",  patient.getContactNumber().ToString(), 10, 160);
                     panel.Controls.Add(number);
 
                     Label dr = createLabel("Doctor Assigned", patient.getDoctorName(), 400, 10);
@@ -312,7 +316,8 @@ namespace ClinicSystem
                 {
                     patient.setDoctorName(reader["FirstName"].ToString() + "    " + reader["MiddleName"].ToString() + "    " + reader["LastName"].ToString());
                     patient.setOperationName(reader["OperationName"].ToString());
-                } 
+                }
+                conn.Close();
             }
             catch (MySqlException ex)
             {
@@ -337,13 +342,13 @@ namespace ClinicSystem
         private void searchPatient()
         {
             List<Patient> filteredPatients = new List<Patient>();
-            string check = checkBoxAdmitted.Checked ? "Admitted" : "Discharged";
+            string choice = radioAdmitted.Checked ? "Admitted" : "Discharged";
             if (string.IsNullOrWhiteSpace(searchPatientName.Text))
             {
               
                 foreach (Patient patient in patientList)
                 {
-                    if (patient.getStatus().Equals(check, StringComparison.OrdinalIgnoreCase))
+                    if (patient.getStatus().Equals(choice, StringComparison.OrdinalIgnoreCase))
                     {
                         filteredPatients.Add(patient);
                     }
@@ -354,7 +359,7 @@ namespace ClinicSystem
                 foreach (Patient patient in patientList)
                 {
                     
-                    if (patient.getStatus() == check && ( patient.getFname().StartsWith(searchPatientName.Text.Trim(), StringComparison.OrdinalIgnoreCase) 
+                    if (patient.getStatus() == choice && ( patient.getFname().StartsWith(searchPatientName.Text.Trim(), StringComparison.OrdinalIgnoreCase) 
                                                         || patient.getMname().StartsWith(searchPatientName.Text.Trim(), StringComparison.OrdinalIgnoreCase) 
                                                         || patient.getLname().StartsWith(searchPatientName.Text.Trim(), StringComparison.OrdinalIgnoreCase) ) )
                     {
@@ -365,7 +370,13 @@ namespace ClinicSystem
 
             displayPatient(filteredPatients);
         }
-        private void checkBoxAdmitted_CheckedChanged(object sender, EventArgs e)
+
+        private void radioAdmitted_CheckedChanged(object sender, EventArgs e)
+        {
+            searchPatient();
+        }
+
+        private void radioDischarge_CheckedChanged(object sender, EventArgs e)
         {
             searchPatient();
         }

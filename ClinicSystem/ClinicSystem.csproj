@@ -98,16 +98,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoctorLoginForm.cs">
+    <Compile Include="Doctors\DoctorLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorLoginForm.Designer.cs">
+    <Compile Include="Doctors\DoctorLoginForm.Designer.cs">
       <DependentUpon>DoctorLoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoctorPanel.cs">
+    <Compile Include="Doctors\DoctorPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorPanel.Designer.cs">
+    <Compile Include="Doctors\DoctorPanel.Designer.cs">
       <DependentUpon>DoctorPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Operation\AddOperation.cs">
@@ -128,7 +128,7 @@
     <Compile Include="Main\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor.cs" />
+    <Compile Include="Doctors\Doctor.cs" />
     <Compile Include="LoginForm\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,10 +158,10 @@
     <Compile Include="ViewPatients\ViewPatientsForm.Designer.cs">
       <DependentUpon>ViewPatientsForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DoctorLoginForm.resx">
+    <EmbeddedResource Include="Doctors\DoctorLoginForm.resx">
       <DependentUpon>DoctorLoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoctorPanel.resx">
+    <EmbeddedResource Include="Doctors\DoctorPanel.resx">
       <DependentUpon>DoctorPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Operation\AddOperation.resx">
@@ -232,6 +232,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\valid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doctor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

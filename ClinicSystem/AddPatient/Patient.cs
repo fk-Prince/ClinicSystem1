@@ -20,14 +20,14 @@ namespace ClinicSystem
         private string condition;
         private DateTime birthDate;
         private DateTime dateAdmitted;
-        private long ContactNumber;
+        private string ContactNumber;
         private double bill;
         private string status;
         private DateTime dischargedDate;
         private string doctorName;
         private string operationName;
 
-        public Patient(int roomNo, int frontdeskId, int doctorId, int operationCode, string fname, string mname, string lname, int age, string address, string gender, string condition, DateTime birthDate, DateTime dateAdmitted, long contactNumber, double bill)
+        public Patient(int roomNo, int frontdeskId, int doctorId, int operationCode, string fname, string mname, string lname, int age, string address, string gender, string condition, DateTime birthDate, DateTime dateAdmitted, string contactNumber, double bill)
         {
             this.roomNo = roomNo;
             this.frontdeskId = frontdeskId;
@@ -47,7 +47,7 @@ namespace ClinicSystem
         }
 
         public Patient(int patientid, int roomNo, int frontdeskId, int doctorId, int operationCode, string fname, string mname, string lname, int age,
-            string address, string gender, string condition, DateTime birthDate, DateTime dateAdmitted, long contactNumber, double bill, string status, DateTime dischargedDate)
+            string address, string gender, string condition, DateTime birthDate, DateTime dateAdmitted, string contactNumber, double bill, string status, DateTime dischargedDate)
         {
             this.patientId = patientid;
             this.roomNo = roomNo;
@@ -141,7 +141,7 @@ namespace ClinicSystem
         {
             return dateAdmitted;
         }
-        public long getContactNumber()
+        public string getContactNumber()
         {
             return ContactNumber;
         }
